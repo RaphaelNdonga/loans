@@ -9,6 +9,6 @@ import java.util.Optional;
 public class AuditAwareImpl implements AuditorAware<String> {
     @Override
     public Optional<String> getCurrentAuditor() {
-        return Optional.empty();
+        return Optional.of("LOANS_MS");
     }
 }

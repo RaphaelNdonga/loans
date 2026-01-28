@@ -4,8 +4,7 @@ import com.raphaelndonga.loans.dto.LoansDto;
 import com.raphaelndonga.loans.entity.Loans;
 
 public class LoansMapper {
-    public static LoansDto mapToLoansDto(Loans loans){
-        LoansDto loansDto = new LoansDto();
+    public static LoansDto mapToLoansDto(Loans loans, LoansDto loansDto){
         loansDto.setLoanType(loans.getLoanType());
         loansDto.setLoanNumber(loans.getLoanNumber());
         loansDto.setTotalLoan(loans.getTotalLoan());
@@ -16,14 +15,13 @@ public class LoansMapper {
         return loansDto;
     }
 
-    public static Loans mapToLoans(LoansDto loansDto){
-        Loans loans = new Loans();
+    public static Loans mapToLoans(LoansDto loansDto, Loans loans){
         loans.setLoanNumber(loansDto.getLoanNumber());
         loans.setLoanType(loansDto.getLoanType());
         loans.setTotalLoan(loansDto.getTotalLoan());
         loans.setAmountPaid(loansDto.getAmountPaid());
-        loansDto.setOutstandingAmount(loansDto.getOutstandingAmount());
-        loansDto.setMobileNumber(loansDto.getMobileNumber());
+        loans.setOutstandingAmount(loansDto.getOutstandingAmount());
+        loans.setMobileNumber(loansDto.getMobileNumber());
 
         return loans;
     }
