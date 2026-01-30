@@ -11,6 +11,7 @@
     <groupId>com.raphaelndonga</groupId>
     <artifactId>loans</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>loans</name>
     <description>loans</description>
     <url/>
@@ -96,7 +97,7 @@
 
     <build>
         <plugins>
-		<plugin>
+		    <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
