@@ -20,22 +20,22 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
 @Validated
+@AllArgsConstructor
 public class LoansController {
-    private ILoansService iLoansService;
-    private Environment environment;
-    private LoansContactInfoDto loansContactInfoDto;
+    private final ILoansService iLoansService;
+//    private final Environment environment;
+    private final LoansContactInfoDto loansContactInfoDto;
 
-    @Value("${build.version}")
-    private String buildVersion;
+//    @Value("${build.version}")
+//    private String buildVersion;
 
-    @Autowired
-    public LoansController(ILoansService iLoansService, Environment environment, LoansContactInfoDto loansContactInfoDto){
-       this.iLoansService = iLoansService;
-       this.environment = environment;
-       this.loansContactInfoDto = loansContactInfoDto;
-    }
+//    @Autowired
+//    public LoansController(ILoansService iLoansService, Environment environment, LoansContactInfoDto loansContactInfoDto){
+//       this.iLoansService = iLoansService;
+//       this.environment = environment;
+//       this.loansContactInfoDto = loansContactInfoDto;
+//    }
 
     @PostMapping("/create")
     public ResponseEntity<ResponseDto> createLoan(@RequestParam String mobileNumber){
@@ -91,10 +91,10 @@ public class LoansController {
         }
     }
 
-    @GetMapping("/build-info")
-    public ResponseEntity<String> buildInfo(){
-        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
-    }
+//    @GetMapping("/build-info")
+//    public ResponseEntity<String> buildInfo(){
+//        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+//    }
 
     @GetMapping("/contact-info")
     public ResponseEntity<LoansContactInfoDto> getContactInfo(){
